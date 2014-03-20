@@ -348,10 +348,6 @@ int lsio_packet_parse_connect(lsio_packet_t *packet,
 	}
 	
 	n = strlen(piece->text);
-	if (0 == n) {
-		LSIO_DEBUG("missing endpoint text");
-		return LSIO_ERROR;
-	}
 	
 	if (NULL == (endpoint = calloc(n + 1, sizeof(char)))) {
 		LSIO_DEBUG("out of memory");
