@@ -406,7 +406,7 @@ int lsio_packet_parse_message(lsio_packet_t *packet,
 	c2 = c1;
 	errno = 0;
 	lid = strtoul(c1, &c2, 10);
-	if (0 != errno || c1 == c2) {
+	if (0 != errno) {
 		LSIO_DEBUG("failed to parse message id");
 		return LSIO_ERROR;
 	}
